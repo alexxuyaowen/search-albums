@@ -62,19 +62,18 @@ header {
 
 #albums {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
-  gap: 1px;
+  justify-content: center;
 }
 
 .album {
-  margin: 2rem;
+  margin: 3px;
   border: 1px solid;
   display: inline-flex;
   flex-direction: column;
   background-color: #f3f3f3;
-  width: 250px;
-  height: 300px;
+  width: 150px;
+  height: 210px;
   box-sizing: border-box;
 }
 
@@ -83,11 +82,8 @@ header {
 }
 
 .collection-name {
-  padding: 0.5rem 1rem 1rem;
+  padding: 0.2rem 1rem 1rem;
   font-family: sans-serif;
   text-align: center;
-}
-
-@media {max-width: } {
-
+  font-size: 12px;
 }
