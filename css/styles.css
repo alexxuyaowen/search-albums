@@ -37,6 +37,7 @@ input[name="search"] {
 
 input:focus {
   outline: none;
+  background-color: #e3e3e3;
 }
 
 input[type="submit"] {
@@ -49,8 +50,11 @@ input[type="submit"] {
 .content-box {
   position: relative;
   top: 6vh;
-  width: 70%;
+  width: 66%;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 header {
@@ -58,6 +62,12 @@ header {
   padding-bottom: 1vh;
   text-align: center;
   font-family: sans-serif;
+}
+
+hr {
+  background-color: #1a7a5d;
+  height: 1px;
+  border: none;
 }
 
 #albums {
@@ -86,4 +96,12 @@ header {
   font-family: sans-serif;
   text-align: center;
   font-size: 12px;
+}
+
+.loader {
+  display: none;
+  align-self: center;
+  margin: 2vh 0 1vh;
+  height: 25px;
+  width: 25px;
 }
