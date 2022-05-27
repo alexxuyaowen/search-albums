@@ -26,6 +26,10 @@
   padding: 0 1%;
 }
 
+.search-bar:hover {
+  width: 50%;
+}
+
 input[name="search"] {
   height: 4vh;
   width: 100%;

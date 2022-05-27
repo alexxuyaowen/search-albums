@@ -13,10 +13,11 @@ loader.style.display="inline";
 fetchJsonp(`https://itunes.apple.com/search?term=${userInput}&media=music&entity=album&attribute=artistTerm&limit=200`)
 .then(res => res.json())
 .then(data => {
-  resultInfo.innerHTML = `${data.resultCount} results for "${userInput}"`;
-
   resultInfo.style.display="inline";
   loader.style.display="none";
+
+  if (userInput === null) return;
+  resultInfo.innerHTML = `${data.resultCount} results for "${userInput}"`;
 
   data.results.forEach(e => albums.innerHTML += `<div class="album">
     <img src=${e.artworkUrl100} class="cover-pic">
