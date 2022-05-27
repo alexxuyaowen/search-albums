@@ -1,11 +1,8 @@
 const userInput = new URLSearchParams(window.location.search).get("search");
 
-const albums = document.getElementById("albums");
-const searchIcon = document.getElementById("search-icon");
-
+const resultInfo = document.getElementById("result-info");
 const loader = document.querySelector('.loader');
-
-let resultInfo = document.getElementById("result-info");
+const albums = document.getElementById("albums");
 
 if (userInput !== null) {
   resultInfo.style.display = "none";
