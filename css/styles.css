@@ -113,14 +113,14 @@ hr {
 #loadMore {
   position: relative;
   display: none;
-  left: 49%;
+  left: 50%;
   top: 50px;
+  transform: translateX(-50%);
   width: 20px;
   height: 20px;
   border-radius: 10px;
   cursor: pointer;
-  margin-top: 15px;
-  margin-bottom: 80px;
+  margin: 15px 0 80px;
 }
 
 #loadMore:hover {

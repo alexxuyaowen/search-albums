@@ -51,7 +51,7 @@ if (userInput !== null) {
 function albumHTML(e) {
   return `<div class="album ${e.collectionId}" id=${e.collectionId}>
             <img src=${e.artworkUrl100} class="cover-pic ${e.collectionId}">
-            <p class="collection-name ${e.collectionId}">${e.collectionName}</p>
+            <p class="collection-name ${e.collectionId}">${e.collectionName.length > 42 ? e.collectionName.substring(0, 42)+"..." : e.collectionName}</p>
           </div>`
 }
 
