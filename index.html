@@ -14,9 +14,9 @@
 <body>
   <div class="nav-bar">
     <form class="search-bar">
-      <input type="text" id="user-input" name="search" placeholder="Search..." required></input>
-      <input type="submit" value="🔍"></input>
-    </div>
+      <input type="text" id="user-input" name="search" placeholder="Search..." autocomplete="off" required />
+      <input type="submit" id="submitBtn" value="🔍" />
+    </form>
   </div>
 
   <div class="content-box">
@@ -31,6 +31,8 @@
       </div> -->
     </ul>
   </div>
+  
+  <button id="loadMore">+</button>
 
   <script src="index.js" charset="utf-8"></script>
 </body>
