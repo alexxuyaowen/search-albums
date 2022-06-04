@@ -40,7 +40,7 @@ if (userInput !== null) {
 
       resultInfo.innerHTML = `${albumsArr.length}/${resultCount} results for "${userInput}"`;
 
-      albums.innerHTML = albumsArr.map(e => albumHTML(e)).join("");
+      albums.innerHTML = albumsArr.map((e, id) => albumHTML(e, id)).join("");
 
       if (limit >= resultCount) {
         loadMore.style.display = "none";
@@ -48,10 +48,10 @@ if (userInput !== null) {
     })
 }
 
-function albumHTML(e) {
-  return `<div class="album ${e.collectionId}" id=${e.collectionId}>
-            <img src=${e.artworkUrl100} class="cover-pic ${e.collectionId}">
-            <p class="collection-name ${e.collectionId}">${e.collectionName.length > 42 ? e.collectionName.substring(0, 42)+"..." : e.collectionName}</p>
+function albumHTML(e, id) {
+  return `<div class="album">
+            <img onclick="more(${id})" src=${e.artworkUrl100} class="cover-pic">
+            <p onclick="more(${id})" class="collection-name">${e.collectionName.length > 42 ? e.collectionName.substring(0, 42)+"..." : e.collectionName}</p>
           </div>`
 }
 
@@ -64,7 +64,7 @@ loadMore.addEventListener('click', () => {
 
     resultInfo.innerHTML = `${albumsArr.length}/${resultCount} results for "${userInput}"`;
 
-    albums.innerHTML = albumsArr.map(e => albumHTML(e)).join("");
+    albums.innerHTML = albumsArr.map((e, id) => albumHTML(e, id)).join("");
 
     window.history.pushState({page: 0}, `${limit}`, `?search=${userInput}&limit=${limit}`)
 
@@ -74,14 +74,26 @@ loadMore.addEventListener('click', () => {
 
 })
 
-// hide an album on click
+// go to detail page on click
+function more(i) {
+  window.open(`${dataResults[i].collectionViewUrl}`, "_blank").focus();
+}
+
 // albums.addEventListener('click', e => {
+//   const tag = e.target.tagName;
+//   const i = e.target.className.split(" ")[1];
+
+//   if (tag === "P" || tag === "IMG") {
+//     window.open(`${dataResults[i].collectionViewUrl}`, "_blank").focus();
+//   }
+// })
+
+
+// albums.addEventListener('click', e => {
+//   console.log(dataResults)
 //   const id = e.target.className.split(" ")[1];
   
 //   if (id) {
-//     count--;
-//     document.getElementById(id).style.display = "none";
-//     resultInfo.innerHTML = `${count} results for "${userInput}"`;
 //   }
 // });
 
