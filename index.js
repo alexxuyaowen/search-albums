@@ -48,7 +48,7 @@ function albumHTML(e, id) {
           </div>`
 }
 
-// load the albums
+// render the albums
 function render() {
   limit = Math.min(resultCount, limit);
   window.history.pushState({page: 0}, `${limit}`, `?search=${userInput}&limit=${limit}`);
@@ -68,9 +68,8 @@ document.getElementById("loadMore").addEventListener('click', () => {
 
 // go to the detail page for an album on click
 function detail(i) {
-  const link = albumsArr[i].collectionViewUrl;
-
-  window.open(link.substring(0, link.length-5), "_blank").focus(); // filter out the "?uo=4" at the end of the link, which may cause problems
+  // filter out the "?uo=4" at the end of the link, which causes problems
+  window.open(albumsArr[i].collectionViewUrl.slice(0, -5), "_blank").focus();
 }
 
 // widen searchbar on focus
